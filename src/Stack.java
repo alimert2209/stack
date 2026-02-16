@@ -3,9 +3,6 @@ public class Stack {
 
     public void push(int data){
         Node newNode = new Node(data);
-        if (top == null)
-            top = newNode;
-
         newNode.next = top;
         top = newNode;
     }
@@ -20,13 +17,12 @@ public class Stack {
         top = top.next;
     }
 
-    public int peek(){
+    public void peek(){
         if (top == null) {
             System.out.println("Empty Stack!");
-            return -1;
+            return;
         }
 
-        System.out.print("Top element: ");
-        return top.data;
+        System.out.println("Top element: " + top.data);
     }
 }
